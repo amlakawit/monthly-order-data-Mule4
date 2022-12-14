@@ -1,0 +1,32 @@
+#%RAML 1.0
+title: Monthly Orders API
+version: v1
+description: Returns order data for a specific month in a requested format.
+protocols:
+  - HTTP
+/orders:
+  /{month}:
+    get:
+      queryParameters:
+        format:
+          required: true
+          enum:
+            - json
+            - csv
+            - xml
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                {
+                  OrderID: 10283,
+                  CustomerID: 46 ,
+                  EmployeeID: 3,
+                  ShipperID: 3,
+                  OrderDetailID: 95,
+                  ProductID: 72,
+                  Quantity: 3 ,
+                  month: 4
+                }
+         

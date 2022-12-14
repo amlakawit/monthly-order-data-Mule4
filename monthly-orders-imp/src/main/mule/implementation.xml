@@ -1,0 +1,228 @@
+<!-- [STUDIO:"Transform Message"]<?xml version="1.0" encoding="UTF-8"?> [STUDIO] -->
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="implementationFlow" doc:id="a9f39bcb-e3d3-43ab-900d-3646f04a09fe">
+        <choice doc:name="Choice" doc:id="8d7eb7f6-3889-4ed6-92ec-3860943140f1" >
+			<when expression="#[attributes.uriParams.month == 'January' or attributes.uriParams.month == '1']">
+				<ee:transform doc:name="January" doc:id="7ad8e168-eef6-4e69-88d3-9fa477b3093b" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/jan.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[attributes.uriParams.month == 'February' or attributes.uriParams.month == '2']">
+				<ee:transform doc:name="February" doc:id="912b39fa-adfb-4b75-9cc4-87c936c216dd" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/feb.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[attributes.uriParams.month == 'March' or attributes.uriParams.month == '3']">
+				<ee:transform doc:name="March" doc:id="99a3ab4c-30d2-4ed1-8eb0-156953f2b339" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/mar.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[attributes.uriParams.month == 'April' or attributes.uriParams.month == '4']">
+				<ee:transform doc:name="April" doc:id="1e3fa1cf-8c72-4660-b436-6deaa791ed6c" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/apr.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[attributes.uriParams.month == 'May' or attributes.uriParams.month == '5']">
+				<ee:transform doc:name="May" doc:id="5424d7b2-54b0-4289-832c-a2158e3c2c88" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/may.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[attributes.uriParams.month == 'June' or attributes.uriParams.month == '6']">
+				<ee:transform doc:name="June" doc:id="a2c2493c-14ac-40c2-8af2-6d8bbaf46645" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/jun.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[attributes.uriParams.month == 'July' or attributes.uriParams.month == '7']">
+				<ee:transform doc:name="July" doc:id="b4fa74d3-a2a7-4069-adf2-c640e644cd55" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/jul.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[attributes.uriParams.month == 'August' or attributes.uriParams.month == '8']">
+				<ee:transform doc:name="August" doc:id="7fc97fb0-02ad-4c6c-ae49-4cb26be4c5db" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/aug.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[attributes.uriParams.month == 'September' or attributes.uriParams.month == '9']">
+				<ee:transform doc:name="September" doc:id="25d88113-32fe-4925-ae62-79b2c3e77be0" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/sep.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[attributes.uriParams.month == 'October' or attributes.uriParams.month == '10']">
+				<ee:transform doc:name="October" doc:id="8fa32329-a0ea-452c-b7c4-b3ed44f853cf" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/oct.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[attributes.uriParams.month == 'November' or attributes.uriParams.month == '11']">
+				<ee:transform doc:name="November" doc:id="2ac4bba7-d5e7-485b-9890-4e23ca4f6060" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/nov.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[attributes.uriParams.month == 'December' or attributes.uriParams.month == '12']">
+				<ee:transform doc:name="December" doc:id="26ba9c47-0c3d-452a-a208-5fc935b9dbdd" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+import * from dw::Runtime 
+---
+readUrl("classpath://input_data/monthly_orders/dec.csv", "application/csv")]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<otherwise >
+				<ee:transform doc:name="invalid uri pram" doc:id="24019e5f-a15b-4d6a-b70c-8ce3def4aa0f" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"Message": "Invalid month value"
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</otherwise>
+		</choice>
+		<choice doc:name="Choice" doc:id="89e2d984-f3d7-4881-82d7-ab97fff392b0" >
+			<when expression="#[attributes.queryParams.format == 'json']">
+				<ee:transform doc:name="json">
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload ]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+			</when>
+			<when expression="#[attributes.queryParams.format == 'csv']">
+				<ee:transform doc:name="csv" doc:id="e3c60979-10e3-4dad-ad3e-6004804439ed" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/csv
+---
+payload ]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="attributes.queryParams.format == 'xml'">
+				<ee:transform doc:name="xml" doc:id="c471df95-824b-4f65-b93d-3e2ac6280dd1" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+---
+{
+    orders: {
+        (payload map ( order01 , indec ) -> {
+            order : {
+			    OrderID : order01.OrderID,
+			    CustomerID : order01.CustomerID,
+			    EmployeeID : order01.EmployeeID,
+			    ShipperID: order01.ShipperID,
+			    OrderDetailID : order01.OrderDetailID,
+			    ProductID : order01.ProductID,
+			    Quantity : order01.Quantity,
+			    month : order01.month
+            }
+        })
+    }
+}
+]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<otherwise >
+				<ee:transform doc:name="format not supported" doc:id="6ea293e9-a998-4506-b62d-0da42bfbcd23" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"Message": "Requested format not supported"
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</otherwise>
+		</choice>
+	</flow>
+</mule>

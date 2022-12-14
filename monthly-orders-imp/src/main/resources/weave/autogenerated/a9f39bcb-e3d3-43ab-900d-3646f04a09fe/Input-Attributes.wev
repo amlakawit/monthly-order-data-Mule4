@@ -1,0 +1,23 @@
+%dw 2.0
+
+type auto_a9f39bcb_e3d3_43ab_900d_3646f04a09fe_Input_Attributes = {|
+  clientCertificate?: {|
+    publicKey?: {|  |}, 
+    "type"?: String, 
+    encoded?: Binary
+  |}, 
+  headers: {|  |}, 
+  listenerPath: String, 
+  method: String, 
+  queryParams: {| format: "xml" | "csv" | "json" |}, 
+  queryString: String, 
+  relativePath: String, 
+  remoteAddress: String, 
+  requestPath: String, 
+  requestUri: String, 
+  scheme: String, 
+  uriParams: {| month: String |}, 
+  version: String, 
+  localAddress: String
+|}
+
